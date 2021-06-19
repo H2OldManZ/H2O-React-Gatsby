@@ -2,7 +2,7 @@
 exports.createPages = async function ({ actions, graphql }) {
     const { data } = await graphql(`
         query {
-            allContentfulPage {
+            allContentfulPage (filter: {enabled: {eq: true}}){
                 nodes {
                     slug
                     name
@@ -10,7 +10,7 @@ exports.createPages = async function ({ actions, graphql }) {
             }
         }
     `)
-    
+
     data.allContentfulPage.nodes.forEach(node => {
       const slug = node.slug
       actions.createPage({

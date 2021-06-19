@@ -14,8 +14,7 @@
 
 exports.ssrComponents = {
   "component---cache-dev-404-page-js": preferDefault(__webpack_require__(/*! ./.cache/dev-404-page.js */ "./.cache/dev-404-page.js")),
-  "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js")),
-  "component---src-templates-page-js": preferDefault(__webpack_require__(/*! ./src/templates/page.js */ "./src/templates/page.js"))
+  "component---src-pages-404-js": preferDefault(__webpack_require__(/*! ./src/pages/404.js */ "./src/pages/404.js"))
   }
 
 
@@ -3453,77 +3452,6 @@ exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
-/***/ "./src/components/layout.js":
-/*!**********************************!*\
-  !*** ./src/components/layout.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var gatsby__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gatsby */ "./.cache/gatsby-browser-entry.js");
-
-
-
-const Layout = ({
-  pageTitle,
-  children,
-  data
-}) => {
-  const curPage = data.contentfulPage.name;
-  const navs = data.allContentfulNavbar.nodes;
-  const navbar = [];
-
-  for (let x = 0; x < navs.length; x++) {
-    if (navs[x].contentfulchildren != null) {
-      navbar.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-        key: navs[x].name
-      }, navs[x].name));
-
-      for (let i = 0; i < navs[x].contentfulchildren.length; i++) {
-        if (curPage === navs[x].contentfulchildren[i]) {
-          navbar.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-            key: navs[x].contentfulchildren[i]
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-            to: navs[x].links[i]
-          }, navs[x].contentfulchildren[i] + " - Active"))));
-        } else {
-          navbar.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-            key: navs[x].contentfulchildren[i]
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-            to: navs[x].links[i]
-          }, navs[x].contentfulchildren[i]))));
-        }
-      }
-    } else {
-      if (curPage === navs[x].name) {
-        navbar.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-          key: navs[x].name
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-          to: navs[x].links[0]
-        }, navs[x].name + " - Active")));
-      } else {
-        navbar.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", {
-          key: navs[x].name
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(gatsby__WEBPACK_IMPORTED_MODULE_1__.Link, {
-          to: navs[x].links[0]
-        }, navs[x].name)));
-      }
-    }
-  }
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("title", null, pageTitle), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, navbar)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, pageTitle), children);
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Layout);
-
-/***/ }),
-
 /***/ "./src/pages/404.js":
 /*!**************************!*\
   !*** ./src/pages/404.js ***!
@@ -3580,35 +3508,6 @@ const NotFoundPage = () => {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NotFoundPage);
-
-/***/ }),
-
-/***/ "./src/templates/page.js":
-/*!*******************************!*\
-  !*** ./src/templates/page.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Page)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/layout */ "./src/components/layout.js");
-
-
-function Page({
-  data
-}) {
-  const page = data.contentfulPage;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_layout__WEBPACK_IMPORTED_MODULE_1__.default, {
-    pageTitle: "H2O Indiana - " + page.name,
-    data: data
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, page.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "I'm making this by following the Gatsby Tutorial."));
-}
-const query = "317661213";
 
 /***/ }),
 

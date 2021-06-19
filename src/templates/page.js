@@ -19,18 +19,7 @@ export const query = graphql`
     contentfulPage( slug: { eq: $slug }) {
       name
     }
-    allContentfulPage (sort: {fields: navbarCategoryOrder}) {
-        edges {
-            node {
-                name
-                slug
-                navbarOrder
-                navbarCategory
-                navbarCategoryOrder
-            }
-        }
-      }
-    allContentfulNavbar(sort: {fields: order}) {
+    allContentfulNavbar(sort: {fields: order}, filter: {enabled: {eq: true}}) {
         nodes {
           contentfulchildren
           name
